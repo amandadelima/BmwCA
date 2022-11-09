@@ -1,0 +1,80 @@
+/// <reference types="cypress" />
+
+import locators from "../../Shared/locators";
+import texts from "../../Shared/texts";
+
+const { HOME_LOCATOR } = locators.home();
+const { HOME_TEXT } = texts.home();
+
+export class HomeScreen {
+  checkUrlPage() {
+    cy.verifyUrl(HOME_TEXT.URL_PARTIAL);
+  }
+
+  checkTexts() {
+    cy.compareText(HOME_LOCATOR.TITLE_HOME, HOME_TEXT.TITLE_HOME);
+    cy.compareText(HOME_LOCATOR.SUB_TITLE_HOME, HOME_TEXT.SUB_TITLE_HOME);
+    cy.compareText(HOME_LOCATOR.SUB_TITLE_HOME_2, HOME_TEXT.SUB_TITLE_HOME_2);
+    cy.compareText(HOME_LOCATOR.HOW_IT_WORKS, HOME_TEXT.HOW_IT_WORKS);
+    cy.compareText(HOME_LOCATOR.SUB_TITLE_HOW_WORKS, HOME_TEXT.SUB_TITLE_HOW_WORKS);
+    cy.compareText(HOME_LOCATOR.QUESTIONS_BMW, HOME_TEXT.QUESTIONS_BMW);
+    cy.compareText(HOME_LOCATOR.SUB_TITLE_HELP, HOME_TEXT.SUB_TITLE_HELP);
+    cy.compareText(HOME_LOCATOR.TITLE_BMW_CANADA, HOME_TEXT.TITLE_BMW_CANADA);
+    cy.compareText(
+      HOME_LOCATOR.SUB_TITLE_BMW_CANADA,
+      HOME_TEXT.SUB_TITLE_BMW_CANADA
+    );
+  }
+
+  checkButton() {
+    cy.isVisible(HOME_LOCATOR.LOGO);
+    //cy.isVisible(HOME_LOCATOR.BUTTON_LOGIN_PRIMARY);
+    cy.isVisible(HOME_LOCATOR.BUTTON_REGISTER);
+    cy.isVisible(HOME_LOCATOR.BUTTON_LOGIN_SECUNDARY);
+    cy.isVisible(HOME_LOCATOR.BUTTON_FORGOR_PASSWORD);
+    cy.isVisible(HOME_LOCATOR.BUTTON_FEQUENTLY_QUESTIONS);
+    cy.isVisible(HOME_LOCATOR.BUTTON_CONTACT_US);
+    cy.isVisible(HOME_LOCATOR.BUTTON_PRIVACY_POLICY);
+    cy.isVisible(HOME_LOCATOR.BUTTON_TERMS_CONDITIONS);
+    cy.isVisible(HOME_LOCATOR.BUTTON_ACESSIBILITY_STATEMENT);
+    cy.isVisible(HOME_LOCATOR.BUTTON_CONTACT_US_FOOTER);
+    cy.isVisible(HOME_LOCATOR.BUTTON_FAQS);
+  }
+
+  checkTextButton() {
+    cy.compareText(HOME_LOCATOR.BUTTON_REGISTER, HOME_TEXT.BUTTON_REGISTER);
+    cy.compareText(
+      HOME_LOCATOR.BUTTON_LOGIN_SECUNDARY,
+      HOME_TEXT.BUTTON_LOGIN_SECUNDARY
+    );
+    cy.compareText(
+      HOME_LOCATOR.BUTTON_FORGOR_PASSWORD,
+      HOME_TEXT.BUTTON_FORGOR_PASSWORD
+    );
+    cy.compareText(
+      HOME_LOCATOR.BUTTON_FEQUENTLY_QUESTIONS,
+      HOME_TEXT.BUTTON_FEQUENTLY_QUESTIONS
+    );
+    cy.compareText(HOME_LOCATOR.BUTTON_CONTACT_US, HOME_TEXT.BUTTON_CONTACT_US);
+    cy.compareText(
+      HOME_LOCATOR.BUTTON_PRIVACY_POLICY,
+      HOME_TEXT.BUTTON_PRIVACY_POLICY
+    );
+    cy.compareText(
+      HOME_LOCATOR.BUTTON_TERMS_CONDITIONS,
+      HOME_TEXT.BUTTON_TERMS_CONDITIONS
+    );
+    cy.compareText(
+      HOME_LOCATOR.BUTTON_ACESSIBILITY_STATEMENT,
+      HOME_TEXT.BUTTON_ACESSIBILITY_STATEMENT
+    );
+    cy.compareText(
+      HOME_LOCATOR.BUTTON_CONTACT_US_FOOTER,
+      HOME_TEXT.BUTTON_CONTACT_US_FOOTER
+    );
+    cy.compareText(HOME_LOCATOR.BUTTON_FAQS, HOME_TEXT.BUTTON_FAQS);
+  }
+}
+
+const homeScreen = new HomeScreen();
+export default homeScreen;
